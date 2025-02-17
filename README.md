@@ -13,8 +13,8 @@ Este es un scraper de Wikipedia desarrollado con **Scrapy** y **BeautifulSoup**.
 
 Asegúrate de tener instalado:
 - Python 3.8+ 🐍
-- Scrapy (pip install scrapy)
-- BeautifulSoup (pip install beautifulsoup4)
+- Scrapy (pip3 install scrapy)
+- BeautifulSoup (pip3 install beautifulsoup4)
 - Git (para clonar el repositorio)
 
 ## Instalación
