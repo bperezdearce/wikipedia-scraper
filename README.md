@@ -1,6 +1,6 @@
 # Wikipedia Scraper
 
-Este es un scraper de Wikipedia desarrollado con **Scrapy** y **BeautifulSoup**. Extrae los títulos, primeros párrafos y enlaces de los 10 artículos destacados en Wikipedia en español.
+Este es un scraper de Wikipedia desarrollado con **Scrapy** y **BeautifulSoup**. Extrae los títulos, primeros párrafos y enlaces de los primeros 10 artículos destacados en Wikipedia en español.
 
 ## Características
 
