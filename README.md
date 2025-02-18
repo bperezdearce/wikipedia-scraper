@@ -1,20 +1,21 @@
 # Wikipedia Scraper
 
-Este es un scraper de Wikipedia desarrollado con **Scrapy** y **BeautifulSoup**. Extrae los títulos, primeros párrafos y enlaces de los primeros 10 artículos destacados en Wikipedia en español.
+Este es un scraper de Wikipedia desarrollado con **Scrapy** y **BeautifulSoup**. Extrae los títulos, primeros párrafos y enlaces de los **primeros 10 artículos destacados** en Wikipedia en español.
 
 ## Características
 
 - Extrae los primeros 10 artículos destacados.
 - Obtiene el título y el primer párrafo de cada artículo.
-- Guarda los datos en formato JSON.
+- Guarda los datos en **JSON, CSV y SQLite**.
 - Limpieza automática de espacios invisibles y referencias numéricas.
 
 ## Requisitos
 
 Asegúrate de tener instalado:
 - Python 3.8+ 🐍
-- Scrapy (pip3 install scrapy)
-- BeautifulSoup (pip3 install beautifulsoup4)
+- Scrapy (pip install scrapy)
+- BeautifulSoup (pip install beautifulsoup4)
+- Pandas (pip install pandas)
 - Git (para clonar el repositorio)
 
 ## Instalación
@@ -37,12 +38,32 @@ pip install -r requirements.txt
 
 ## Cómo Ejecutarlo
 
-Para ejecutar el scraper y guardar la salida en un archivo JSON:
+#### Ejecutar el scraper y guardar los datos
+Para extraer los datos y guardarlos en JSON:
 ```
 scrapy crawl wikipedia -o articulos.json
 ```
-Después de ejecutarlo, encontrarás un archivo articulos.json con los resultados.
+Para guardar los datos en CSV:
+```
+scrapy crawl wikipedia -o articulos.csv
+```
+## Exportar los Datos a SQL
 
+#### 1. Crear la base de datos y la tabla
+```
+python db.py
+```
+Esto guardará los datos en wikipedia.db en una tabla llamada articulos.
+
+#### 2. Consultar los datos en SQLite
+Abre la base de datos en la terminal:
+```
+sqlite3 wikipedia.db
+```
+Luego, en la consola de SQLite, ejecuta:
+```
+SELECT * FROM articulos;
+```
 ## Ejemplo de Salida JSON
 ```
 [
@@ -61,6 +82,8 @@ Después de ejecutarlo, encontrarás un archivo articulos.json con los resultado
 
 ## Posibles Mejoras
 
-- Exportar datos a CSV o base de datos.
 - Mejorar la extracción de más secciones de Wikipedia.
-- Implementar Scrapy Pipelines para limpiar los datos antes de guardarlos.
+- Optimizar la limpieza de datos con Scrapy Pipelines.
+- Añadir una API para consultar los datos fácilmente.
+
+
